@@ -44,10 +44,10 @@ sf_limite_gam_web <-
   st_transform(3857)
 
 # Capa raster de uso de la tierra (en Web Mercator)
-# raster_uso_tierra <-
-#   raster(url_raster_uso_tierra) %>%
-#   crop(sf_limite_gam_web) %>%
-#   mask(sf_limite_gam_web)
+raster_uso_tierra <-
+  raster(url_raster_uso_tierra) %>%
+  crop(sf_limite_gam_web) %>%
+  mask(sf_limite_gam_web)
 
 #---------------- Paletas de colores ---------------
 
@@ -93,19 +93,19 @@ leaflet() %>%
     weight = 6.0,
     group = "Límite de la GAM"
   ) %>%
-  # addRasterImage(
-  #   raster_uso_tierra,
-  #   colors = pal,
-  #   opacity = 1,
-  #   group = "Uso de la tierra"
-  # ) %>%
-  # addLegend(
-  #   title = "Uso de la tierra",
-  #   position = "bottomleft",
-  #   colors = colores_uso_tierra,
-  #   labels = etiquetas_uso_tierra,
-  #   group = "Uso de la tierra"
-  # ) %>%
+  addRasterImage(
+    raster_uso_tierra,
+    colors = pal,
+    opacity = 1,
+    group = "Uso de la tierra"
+  ) %>%
+  addLegend(
+    title = "Uso de la tierra",
+    position = "bottomleft",
+    colors = colores_uso_tierra,
+    labels = etiquetas_uso_tierra,
+    group = "Uso de la tierra"
+  ) %>%
   addLayersControl(
     baseGroups = c("OpenStreetMap", "Stamen Toner Lite", "CartoDB Dark Matter", "Imágenes de ESRI"),
     overlayGroups = c("Límite de la GAM", "Uso de la tierra"),
