@@ -193,7 +193,7 @@ valueBox(value = "Tibás: 10.0 m2",
 
 ### Cobertura máxima {.value-box} {data-width=200}
 ```{r}
-valueBox(value = "Alvarado: 1843.0 m2", 
+valueBox(value = "Paraíso: 1843.0 m2", 
   caption = "Cobertura máxima"
 )
 ```
