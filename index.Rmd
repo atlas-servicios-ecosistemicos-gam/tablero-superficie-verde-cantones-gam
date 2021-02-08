@@ -186,22 +186,22 @@ Row {data-height=350}
 
 ### Cobertura mínima {.value-box} {data-width=200}
 ```{r}
-valueBox(value = "Tibás: 10.0 m2", 
-  caption = "Cobertura mínima"
+valueBox(value = "Mínimo", 
+  caption = "<h2><strong>Tibás: 10.0 m2</strong></h2>"
 )
 ```
 
 ### Cobertura máxima {.value-box} {data-width=200}
 ```{r}
-valueBox(value = "Paraíso: 1843.0 m2", 
-  caption = "Cobertura máxima"
+valueBox(value = "Máximo", 
+  caption = "<h2><strong>Paraíso: 1843.0 m2</strong></h2>"
 )
 ```
 
 ### Cobertura promedio {.value-box} {data-width=200}
 ```{r}
-valueBox(value = "486.7 m2", 
-  caption = "Cobertura promedio de la GAM"
+valueBox(value = "Promedio", 
+  caption = "<h2><strong>486.7 m2</strong></h2>"
 )
 ```
 
