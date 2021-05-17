@@ -12,6 +12,7 @@ library(flexdashboard)
 library(dplyr)
 library(sf)
 library(leaflet)
+library(leaflet.extras)
 library(leafem)
 library(esri2sf)
 library(raster)
@@ -94,11 +95,11 @@ leaflet() %>%
     fillColor = ~pal_metrica(sup_verde_),
     weight = 1,
     popup = paste(paste("<strong>Cantón:</strong>",  sf_metricas_cantones$canton), 
-                  paste("<strong>Cobertura:</strong>", sf_metricas_cantones$sup_verde_, "%"), 
+                  paste("<strong>Cobertura:</strong>", sf_metricas_cantones$sup_verde_, "m2"), 
                   sep = '<br/>'
                   ),
     label = paste(paste("Cantón:",  sf_metricas_cantones$canton), 
-                  paste("Cobertura:", sf_metricas_cantones$sup_verde_, "%"), 
+                  paste("Cobertura:", sf_metricas_cantones$sup_verde_, "m2"), 
                   sep = ' - '
                   ),
     group = "Superficie verde"
@@ -120,7 +121,9 @@ leaflet() %>%
     position = "bottomleft",
     options = scaleBarOptions(imperial = FALSE)
   ) %>%
-  addMouseCoordinates()
+  addMouseCoordinates() %>%
+  addSearchOSM() %>%
+  addResetMapButton()
 ```
 
 ### San José {data-width=200}
